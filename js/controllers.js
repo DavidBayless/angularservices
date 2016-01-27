@@ -1,6 +1,7 @@
-app.controller('TemplateController', [TemplateController]);
+app.controller('TemplateController', ['person', 'square', TemplateController]);
 
-function TemplateController() {
+function TemplateController(person, square) {
   var vm = this;
-  vm.title = 'Angular Template'
+  vm.title = square(2);
+
 }
