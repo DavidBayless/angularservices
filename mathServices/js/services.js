@@ -6,6 +6,8 @@ function mathService() {
     operand == '+' ? ans = numOne + numTwo :
     operand == '-' ? ans = numOne - numTwo :
     operand == '/' ? ans = numOne / numTwo : ans = numOne * numTwo;
-    return ans;
+    if (!isNaN(ans)) {
+      return ans.toString();
+    }
   }
 }

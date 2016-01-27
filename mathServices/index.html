@@ -17,7 +17,7 @@
 </head>
 <body ng-controller='mathController as MC'>
   <div class='formWrapper'>
-    <select ng-model='operand' ng-init='operand="+"; answer=""'>
+    <select ng-model='operand' ng-init='operand="+";'>
       <option value='+'>Add</option>
       <option value='-'>Subtract</option>
       <option value='*'>Multiply</option>
@@ -25,8 +25,7 @@
     </select>
     <input type='number' placeholder="First Number" ng-model='numOne' required>
     <input type='number' placeholder="Second Number" ng-model='numTwo' required>
-    <button ng-click='answer=MC.math(numOne, numTwo, operand)'>Calculate</button>
   </div>
-  <h2>{{answer}}</h2>
+  <h2>{{MC.math(numOne, numTwo, operand) || ''}}</h2>
 </body>
 </html>
